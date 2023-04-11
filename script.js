@@ -18,9 +18,7 @@ function getComputerChoice(){
     }
 }
 
-function singleRound(playerSection, computerSection){
-    computerSection = getComputerChoice();
-        
+function singleRound(playerSection, computerSection){    
         if(playerSection === 'rock'){
         if (computerSection === 'scissors'){
             return `You win! ${playerSection} beats ${computerSection}`;
@@ -51,31 +49,24 @@ function singleRound(playerSection, computerSection){
      
 }
 
-const playerSection = 'rock';
-const computerSection = getComputerChoice();
-const test = singleRound(playerSection, computerSection);
 
-console.log(test);
+function game() {
+    let userPoint = 0;
+    let computerPoint = 0;
 
-
-
-
-// doesn't work proper.. fix
-
-function result() {
-
-    if (test === `You win! ${playerSection} beats ${computerSection}`){
+    for (let i = 0; i < 5; i++){
+    const playerSection = prompt(`Enter your choice (rock, paper, or scissors)`);
+    const computerSection = getComputerChoice();
+    const roundResult = singleRound(playerSection, computerSection);
+    
+    if (roundResult.includes('You win!')){
         userPoint++;
-        return `Your point: ${userPoint}`;
-    }else if (test === `You lose! ${computerSection} beats ${playerSection}`){
+    } else if (roundResult.includes('You lose!')){
         computerPoint++;
-        return `Computer Point: ${computerPoint}`;
-    }else if (test === `You picked ${playerSection} and computer picked ${computerSection}. It\'s a TIE!`){
-        return `Your point: ${userPoint} and Computer point: ${computerPoint} `;
     }
-
+    console.log(roundResult);
+}    
+    return `Your point: ${userPoint} and computer point: ${computerPoint}`;
 }
-let userPoint = 0;
-let computerPoint = 0;
 
-console.log(result());
+console.log(game());
