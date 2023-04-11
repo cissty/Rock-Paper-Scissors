@@ -45,6 +45,8 @@ function singleRound(playerSection, computerSection){
         }else {
             return `You lose! ${computerSection} beats ${playerSection}`;
         }
+    }   else {
+            return `Try typing (rock, paper or scissors)`
     }
      
 }
