@@ -3,8 +3,11 @@
 //Scissors beat paper but loses to rock.
 //Paper beats rock, but loses to scissors.
 //Determine the winner. Either user or computer.
-//There will be 5 rounds. 
+//There will be 5 rounds.
+//keep score for the 5 rounds. 
 
+
+//CREATING A RANDOM VALUE FOR EACH ITEM//
 function getComputerChoice(){
 
     let randomGenerator = Math.random()
@@ -17,6 +20,8 @@ function getComputerChoice(){
         return 'scissors';
     }
 }
+
+//PLAYING a single ROUND of rock, paper, scissors and selecting who wins or lose//
 
 function singleRound(playerSection, computerSection){    
         if(playerSection === 'rock'){
@@ -50,7 +55,7 @@ function singleRound(playerSection, computerSection){
     }
      
 }
-
+// keeping score and asking user for playerSection.//
 
 function game() {
     let userPoint = 0;
